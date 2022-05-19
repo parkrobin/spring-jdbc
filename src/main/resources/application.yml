@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: spring_jdbc_demo
+  mvc:
+    path-match:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/changeme
+    username: changeme
+    password: changeme
+
+server:
+  port: 8080
+  servlet:
+    context-path: /spring/jdbc
