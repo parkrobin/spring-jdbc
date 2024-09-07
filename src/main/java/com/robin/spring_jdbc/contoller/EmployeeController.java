@@ -15,27 +15,27 @@ public class EmployeeController {
     private EmployeeDao employeeDao;
 
     @PostMapping("")
-    public Boolean createEmployee(String name, int age){
+    public Boolean createEmployee(String name, int age) {
         return employeeDao.create(name, age);
     }
 
     @GetMapping("")
-    public List<Employee> getEmployeesByName(String name){
+    public List<Employee> getEmployeesByName(String name) {
         return employeeDao.selectByName(name);
     }
 
     @GetMapping("/all")
-    public List<Employee> getEmployeesAll(){
+    public List<Employee> getEmployeesAll() {
         return employeeDao.selectAll();
     }
 
     @DeleteMapping("")
-    public Boolean deleteEmployeesById(int id){
+    public Boolean deleteEmployeesById(int id) {
         return employeeDao.deleteById(id);
     }
 
     @DeleteMapping("/all")
-    public Boolean deleteEmployeesAll(){
+    public Boolean deleteEmployeesAll() {
         return employeeDao.deleteAll();
     }
 }
