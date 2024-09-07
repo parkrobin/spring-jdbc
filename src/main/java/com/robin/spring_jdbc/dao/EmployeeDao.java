@@ -28,46 +28,46 @@ public class EmployeeDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public boolean create(String name, int age){
-        try{
+    public boolean create(String name, int age) {
+        try {
             return jdbcTemplate.update(String.format(INSERT_SQL, name, age)) > 0;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return false;
         }
     }
 
-    public List<Employee> selectByName(String name){
-        try{
+    public List<Employee> selectByName(String name) {
+        try {
             return jdbcTemplate.query(String.format(SELECT_BY_NAME_SQL, name), employeeRowMapper);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return new ArrayList<>();
         }
     }
 
-    public List<Employee> selectAll(){
-        try{
+    public List<Employee> selectAll() {
+        try {
             return jdbcTemplate.query(SELECT_ALL_SQL, employeeRowMapper);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return new ArrayList<>();
         }
     }
 
-    public boolean deleteById(int id){
-        try{
+    public boolean deleteById(int id) {
+        try {
             return jdbcTemplate.update(String.format(DELETE_BY_ID_SQL, id)) > 0;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return false;
         }
     }
 
-    public boolean deleteAll(){
-        try{
+    public boolean deleteAll() {
+        try {
             return jdbcTemplate.update(DELETE_ALL_SQL) > 0;
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
             return false;
         }

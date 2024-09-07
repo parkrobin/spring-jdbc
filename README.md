@@ -26,9 +26,15 @@ mysql> desc employees;
 +-------+-------------+------+-----+---------+----------------+
 ```
 
-## 3. Swagger
+## 3. Run
 
 ```
-http://localhost:8080/spring/jdbc/swagger-ui/#/
+ mvn spring-boot:run
+```
+
+## 4. Swagger
+
+```
+http://localhost:8080/spring/jdbc/swagger-ui/index.html
 ```
 
